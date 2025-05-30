@@ -177,7 +177,7 @@ for partition in "${PARTITIONS[@]}"; do
         # Try to extract file through '7z'
         ${FSCK_EROFS} --extract="${partition}" "${partition}".img >> /dev/null 2>&1 || {
                 # Try to extract file through '7z'
-                7z -snld x "${partition}".img -y -o"${partition}"/ > /dev/null || {
+                7z -snl x "${partition}".img -y -o"${partition}"/ > /dev/null || {
                 LOGE "'${partition}' extraction via '7z' failed."
 
                 # Only abort if we're at the first occourence
